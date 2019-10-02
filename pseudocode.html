@@ -1,0 +1,71 @@
+Pseudocode:
+     in Javascript: {
+        1. Create an array of random word options based on the theme 
+        2. Create a variable of guesses allowed
+        3. Create an array to hold incorrect guesses (letters)
+        4. Generate a random word based on array (Math.random)
+        5. Store random word in a variable and split it into an array 
+        6. Generate an array of underscores based on the length of the target word
+        7. conditional: {
+            if (sound-on is pressed) {
+                play song: song starts from beginning 
+            }
+            else (sound-off is pressed) {
+                stop playing song 
+            }
+        }
+
+        7. Event listen for an input of a letter{
+            Make a function {
+                1. Takes in input letter 
+                2. Use the for loop to compare the input with each individual index in that array
+                3. Compares input letter with each index in the array 
+                4. create conditional {
+                    1. If it contains the input,{
+                        then put letter in correct index of target word, replacing the underscore
+                    }
+                    2. else, {
+                        the player loses a guess
+                        Add letter to array of letters already guessed/incorrect guesses 
+                    }
+
+                }  
+        8. make a conditional {
+            if (player ) {
+                display: "You Won!"
+                reset game: (so back to top of ) {
+                    1. Generate a random word based on array (Math.random)
+                    2. Store random word in a variable and split it into an array 
+                    3. Generate an array of underscores based on the length of the target word
+                    4. make the array to hold incorrect guesses empty
+                }
+            }
+
+            else if (player guesses incorrect letter) {
+
+            }
+
+            else if (number of guesses left = 0) {
+                display (alert?): "You Lost!"
+                display (alert?): "(target word)"
+                reset game: (so back to top of ) {
+                    1. Generate a random word based on array (Math.random)
+                    2. Store random word in a variable and split it into an array 
+                    3. Generate an array of underscores based on the length of the target word
+                    4. make the array to hold incorrect guesses empty 
+                }
+
+            }
+        }
+        
+        
+            }
+        } 
+                
+
+
+     }
+
+
+
+
