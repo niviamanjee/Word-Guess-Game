@@ -18,10 +18,8 @@ function startGame() {
     //get random number for array
     var targetMovieIndex = Math.floor(Math.random() * movieChoices.length);
 
-    //pick a guess from our array
+    //places the value from the random number of the array in a variable 
     selectedMovie = movieChoices[targetMovieIndex];
-    // var targetMovieArray = [];
-    // targetMovieArray = str.split("");
 
     // var hiddenMovieArray = [];
     for (var i = 0; i < selectedMovie.length; i++) {
@@ -42,21 +40,28 @@ function displayGuessArray() {
     }
     $("#random-movie").text(characters);
 }
-/* When play button is clicked, the startGame function is activated. */
-$("#play-button").on("click", function () {
+
+
+function displayIncorrectArray(userGuess) {
+    $("#letters-guessed").append(userGuess);
+}
+
+
+$(".reset-button").on("click", function () {
     startGame();
 });
 
 var isFirstGame = true;
 /* when the user presses a key...*/
 document.onkeyup = function (event) {
+    console.log("test");
 
 
     if (isFirstGame) {
         startGame();
         isFirstGame = false;
-
-    } else {
+    }
+    else {
         var userGuess = event.key;
 
         for (var i = 0; i < selectedMovie.length; i++) {
@@ -64,30 +69,15 @@ document.onkeyup = function (event) {
                 guessArray[i] = userGuess;
                 displayGuessArray();
             }
+
+            else {
+                lettersGuessed.push(userGuess);
+            }
+
+
         }
-
-
 
     }
 
-
-    // for (var e = 0; e < targetMovieArray.length; e++) {
-    //     /*check if the letter pressed exists in the targetMovieArray.
-    //         If it does, show those letters in the correct indexes of the hiddenMovieArray.
-    //         Else, display the letter guessed in the lettersGuessed array. */
-
-    //     if (targetMovieArray.includes(userGuess) === true) {
-    //         /* display the letter pressed in correct index of hiddenMovieArray on HTML*/
-    //     }
-
-    //     else {
-    //         lettersGuessed.push(userGuess);
-    //         $("#letters-guessed").text(userGuess);
-    //     }
-    // }
-
-
 }
-
-
 
