@@ -11,66 +11,64 @@
     <link rel="stylesheet" type="text/javascript" href="../Word-Guess-Game/assets/javascript/game.js">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <div class="jumbotron">
+            <div class="jumbotron" class="text-center">
                 <h1 class="display-4"> Word Guess Game </h1>
                 <p class="lead">
-                    <h2>Michael Jackson Halloween Theme!</h2>
-                    <h3> Song: Thriller </h3>
+                    <h2>Horror Movie Halloween Theme!</h2>
+                    <h3> So </h3>
                 </p>
-                <hr class="my-4">
-                <p>Guess the word which appears in the Michael Jackson song, Thriller, by guessing each letter. Click
-                    play to start the game and restart game to start over with a new word!
+                <hr class="my-4" class="text-center">
+                <p>Try to guess the title of the classic horror movie by guessing each letter. Press any key to
+                    start playing! Click on the "Reset Game" button to start over.
                 </p>
-                <a class="btn btn-primary btn-lg" href="#" role="button"> Play! </a>
-                <a class="btn btn-secondary btn-lg" href="#" role="button"> Reset Game! </a>
+
+                <button id="reset-game" role="button"> Reset Game! </button>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <img src="../Word-Guess-Game/assets/images/thrillerpic1.jpg" alt="Michael Jackson 1"
-                    class="img-thumbnail">
+                <img src="../Word-Guess-Game/assets/images/screamhorrorpic.jpg" alt="Scream">
             </div>
-            <div class="col-5">
-                <div class="jumbotron">
-                    <h1 class="text-center"> Guess this word: </h1>
-
-                    <div class="text-center">
-                        <h2 class="text-center" id="random-number"></h2>
-                    </div>
+            <div>
+                <div>
+                    <h1> Guess this word: </h1>
+                    <h2 id="random-movie"></h2>
+                    <!-- reference this when linking JS to create the target word functions-->
                 </div>
             </div>
-            <div class="col">
-                <img src="../Word-Guess-Game/assets/images/thrillerpic2.jpg" alt="Michael Jackson 2"
+            <div>
+                <img src="../Word-Guess-Game/assets/images/freddykreugerpic.jpg" alt="Freddy Krueger"
                     class="img-thumbnail">
             </div>
         </div>
 
-        <div class="row">
+        <div>
             <div class="col">
                 <h3> Guesses Remaining: </h3>
             </div>
             <div class="col">
-                <h3> Letters Guessed: </h3>
+                <h3 id="letters-guessed"> Letters Guessed: </h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="musicControls" class="text-center">
+                <button class="btn btn-warning btn-xs theme-button">
+                    <span class="fa fa-music"></span> Play Theme!</button>
+                <button class="btn btn-dark btn-xs pause-button">
+                    <span class="fa fa-pause"></span> Pause Song</button>
             </div>
         </div>
     </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>

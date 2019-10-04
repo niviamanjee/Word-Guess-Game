@@ -1,26 +1,34 @@
 Pseudocode:
      in Javascript: {
-        1. Create an array of random word options based on the theme 
-        2. Create a variable of guesses allowed
-        3. Create an array to hold incorrect guesses (letters)
-        4. Generate a random word based on array (Math.random)
-        5. Store random word in a variable and split it into an array 
-        6. Generate an array of underscores based on the length of the target word
-        7. conditional: {
+    <script>
+        // 1. Create an array of random word options based on the theme 
+            wordChoices["","", ...];
+        // 2. Create a variable of guesses allowed
+            var guessesAllowed = 8;
+        // 3. Create an array to hold incorrect guesses (letters)
+            var incorrectGuesses [];
+        // 4. when button "play game" is clicked-->Generate a random word based on array (Math.random)
+            $("play-button").on("click", function () {
+                var targetWord= Math.floor(Math.random() * wordChoices.length);
+                var targetWordArray= str.split(targetWord);
+            })
+        // 5. Store random word in a variable and split it into an array 
+        // 6. Generate an array of underscores based on the length of the target word
+        // 7. conditional: { (use the captain planet activity to figure out how to play and pause music)
             if (sound-on is pressed) {
                 play song: song starts from beginning 
             }
             else (sound-off is pressed) {
                 stop playing song 
             }
-        }
+        // }
 
-        7. Event listen for an input of a letter{
-            Make a function {
-                1. Takes in input letter 
-                2. Use the for loop to compare the input with each individual index in that array
-                3. Compares input letter with each index in the array 
-                4. create conditional {
+        // 7. Event listen for an input of a letter{
+        //     Make a function {
+        //         1. Takes in input letter 
+        //         2. Use the for loop to compare the input with each individual index in that array
+        //         3. Compares input letter with each index in the array 
+        //         4. create conditional {
                     1. If it contains the input,{
                         then put letter in correct index of target word, replacing the underscore
                     }
@@ -30,7 +38,7 @@ Pseudocode:
                     }
 
                 }  
-        8. make a conditional {
+        // 8. make a conditional {
             if (player ) {
                 display: "You Won!"
                 reset game: (so back to top of ) {
@@ -69,3 +77,5 @@ Pseudocode:
 
 
 
+    </script>
+        
