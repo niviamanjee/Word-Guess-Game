@@ -22,12 +22,13 @@
                 <h1 class="display-4 happy"> Word Guess Game </h1>
                 <p class="lead">
                     <h2>Horror Movie Halloween Theme!</h2>
-                    <h3> So </h3>
                 </p>
                 <hr class="my-4" class="text-center">
-                <p>Try to guess the title of the classic horror movie by guessing each letter. Press any key to
+                <p>Try to guess the title of the classic horror movie by guessing each letter (each letter guessed must
+                    be in lowercase form). Press any key to
                     start playing! Click on the "Reset Game" button to start over.
                 </p>
+                <p id="message"></p>
 
                 <input class="btn btn-primary reset-button" type="reset" value="Reset">
             </div>
@@ -52,7 +53,7 @@
 
         <div class="row">
             <div class="col">
-                <h3> Guesses Remaining: </h3>
+                <h3 id="guesses-remaining"> Guesses Remaining: </h3>
             </div>
             <div class="col">
                 <h3 id="letters-guessed"> Letters Guessed: </h3>
