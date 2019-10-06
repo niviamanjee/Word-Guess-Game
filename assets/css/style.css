@@ -1,3 +1,39 @@
-.happy {
-    color: blue;
+body {
+    background: url(../images/what-the-hex-dark.png);
+}
+.title {
+    font-family: 'Fredericka the Great', cursive;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+}
+#subtitle {
+    font-family: 'Lacquer', sans-serif;
+    text-align: center;
+    color: red;
+    font-size: 150%;
+}
+.rules {
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#reset-button {
+    align-content: center;
+}
+#message {
+    padding: 5px;
+    margin-left: 60px;
+    font-size: 200%;
+    color: whitesmoke;
+}
+#guess-word {
+    text-align: center;
+} 
+#random-movie {
+    color: whitesmoke;
+}
+.game-words {
+    color: orange;
+    font-family: 'Luckiest Guy', cursive;
 }

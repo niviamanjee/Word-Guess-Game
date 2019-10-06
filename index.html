@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/javascript" href="../Word-Guess-Game/assets/javascript/game.js">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Lacquer&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
@@ -19,33 +20,35 @@
     <div class="container">
         <div class="row">
             <div class="jumbotron" class="text-center test">
-                <h1 class="display-4 happy"> Word Guess Game </h1>
+                <h1 class="display-4 title"> Word Guess Game </h1>
                 <p class="lead">
-                    <h2>Horror Movie Halloween Theme!</h2>
+                    <h2 id="subtitle">Horror Movie Halloween Theme!</h2>
                 </p>
-                <hr class="my-4" class="text-center">
+                <hr class="my-4" class="text-center rules">
                 <p>Try to guess the title of the classic horror movie by guessing each letter (each letter guessed must
                     be in lowercase form). Press any key to
                     start playing! Click on the "Reset Game" button to start over.
                 </p>
-                <p id="message"></p>
 
-                <input class="btn btn-primary reset-button" type="reset" value="Reset">
+                <button type="submit" id="reset-button" onClick="refreshPage()">Reset Game</button>
             </div>
+        </div>
+        <div class="row">
+            <p id="message"></p>
         </div>
 
         <div class="row">
-            <div class="col">
-                <img src="../Word-Guess-Game/assets/images/screamhorrorpic.jpg" alt="Scream" class="img-thumbnail">
+            <div class="col-3">
+                <img src="../Word-Guess-Game/assets/images/pennywise.jpg" alt="Pennywise" class="img-thumbnail">
             </div>
             <div class="col">
-                <div>
-                    <h1> Guess this word: </h1>
+                <div id="guess-word">
+                    <h1 class="game-words" id="movie-is"> Guess this movie: </h1>
                     <h2 id="random-movie"></h2>
                     <!-- reference this when linking JS to create the target word functions-->
                 </div>
             </div>
-            <div class="col">
+            <div class="col-3">
                 <img src="../Word-Guess-Game/assets/images/freddykreugerpic.jpg" alt="Freddy Krueger"
                     class="img-thumbnail">
             </div>
@@ -53,19 +56,10 @@
 
         <div class="row">
             <div class="col">
-                <h3 id="guesses-remaining"> Guesses Remaining: </h3>
+                <h3 id="guesses-remaining" class="game-words"> Guesses Remaining: 10</h3>
             </div>
             <div class="col">
-                <h3 id="letters-guessed"> Letters Guessed: </h3>
-            </div>
-        </div>
-
-        <div class="row">
-            <div id="musicControls" class="text-center">
-                <button class="btn btn-warning btn-xs theme-button">
-                    <span class="fa fa-music"></span> Play Theme!</button>
-                <button class="btn btn-dark btn-xs pause-button">
-                    <span class="fa fa-pause"></span> Pause Song</button>
+                <h3 id="letters-guessed" class="game-words"> Letters Guessed: </h3>
             </div>
         </div>
     </div>

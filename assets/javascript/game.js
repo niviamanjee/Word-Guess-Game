@@ -1,7 +1,7 @@
 
 /* Array with choices of 10 movie names. */
 var movieChoices = [
-    "the conjuring", "the shining", "poltergeist", "the exorcist", "annabelle", "halloween", "paranormal Activity",
+    "the conjuring", "the shining", "poltergeist", "the exorcist", "annabelle", "halloween", "paranormal activity",
     "lights out", "world war z", "chucky"];
 
 var counterGuessesLeft = 10;
@@ -34,6 +34,7 @@ function startGame() {
 
 }
 
+// var characters = "";
 function displayGuessArray() {
     //create a string to hold our characters
     var characters = "";
@@ -41,17 +42,23 @@ function displayGuessArray() {
         characters += guessArray[i] += " ";
     }
     $("#random-movie").text(characters);
+
+    // if (characters === selectedMovie) {
+    //     console.log("it works!");
+    //     $("#message").text("You Won!");
+    //     $("#movie-is").text("The movie is: ");
+    //     $("#random-movie").text(selectedMovie);
+    //     setTimeout(refreshPage, 10000);
+    // }
 }
 
 /* this function compared the key pressed to the letters in the already guessed array*/
 function displayLettersGuessedArray() {
     var userGuess = event.key;
-    console.log(userGuess);
     var letterIsDuplicated = false;
     for (var i = 0; i < lettersGuessed.length; i++) {
         console.log(lettersGuessed[i]);
         if (userGuess === lettersGuessed[i]) {
-            console.log(lettersGuessed[i]);
             /* display: "you already guessed that letter!" */
             letterIsDuplicated = true;
             $("#message").text("You already guessed this letter!");
@@ -59,8 +66,8 @@ function displayLettersGuessedArray() {
     }
     lettersGuessed.push(userGuess);
     if (letterIsDuplicated === false) {
-        console.log("it's working!");
         $("#letters-guessed").append(userGuess + " ,");
+        $("#message").text("Wrong letter! Try again.");
     }
 
 
@@ -68,24 +75,30 @@ function displayLettersGuessedArray() {
 
 function counterGuesses(i) {
     var userGuess = event.key;
-    $("#guesses-remaining").text("Guesses Remaining: 8");
-    if (userGuess === selectedMovie[i]) {
+    $("#guesses-remaining").text("Guesses Remaining: 10");
+    if (userGuess != selectedMovie[i]) {
         counterGuessesLeft--;
         console.log(counterGuessesLeft);
         $("#guesses-remaining").text("Guesses Remaining: " + counterGuessesLeft);
     }
-    else if (userGuess != lettersGuessed[i]) {
-        counterGuessesLeft--;
-        $("#guesses-remaining").text("Guesses Remaining: " + counterGuessesLeft);
+    else if (userGuess === lettersGuessed[i]) {
+        counterGuessesLeft
+        $("#message").text("You already guessed this letter!");
+    }
 
+    if (counterGuessesLeft === 0) {
+        console.log("It Works!")
+        $("#message").text("You Lost!");
+        $("#movie-is").text("The movie is: ");
+        $("#random-movie").text(selectedMovie);
+        setTimeout(refreshPage, 7000);
     }
-    else {
-        /* display: "you already guessed that letter!" */
-    }
+
+}
+function refreshPage() {
+    window.location.reload();
 }
 
-
-$(".reset-button").on("click", startGame);
 
 
 var isFirstGame = true;
@@ -100,28 +113,37 @@ document.onkeyup = function (event) {
         isFirstGame = false;
 
     }
-    else {
+    else if (isFirstGame === false) {
         var userGuess = event.key;
 
 
         var guessedCorrectly = false
 
         for (var i = 0; i < selectedMovie.length; i++) {
+
             if (userGuess === selectedMovie[i]) {
                 guessedCorrectly = true;
                 guessArray[i] = userGuess;
                 displayGuessArray();
-                counterGuesses(i);
             }
-
+            $("#message").text("Good Job! You guessed a letter right!");
         }
-        console.log(guessedCorrectly)
+
         if (guessedCorrectly === false) {
+            console.log(guessedCorrectly)
             displayLettersGuessedArray();
             counterGuesses();
         }
 
     }
+
+    // else if (counterGuessesLeft <= 0) {
+    //     console.log("It Works!")
+    //     $("#message").text("You Lost!");
+    //     $("#random-movie").text(selectedMovie);
+    // }
+
+
 
 }
 
