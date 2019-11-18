@@ -1,2 +1,8 @@
 # Word-Guess-Game
-A Word Guess Game is created using HTML, CSS, Bootstrap, and Javascript.
+This Word Guess Game is a fun interactive horror movie guessing game using HTML, CSS, and Javascript. 
+
+## Skills Used
+* HTML 
+* CSS and Bootstrap 
+* Javascript 
+* JQuery
